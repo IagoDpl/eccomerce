@@ -1,9 +1,8 @@
 "use client";
 
-
+import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-
 
 const slides = [
   {
@@ -45,11 +44,12 @@ const Slider = () => {
     return () => cleatInterval(interval);
   }, []); */
 
-
   return (
     <div className="h-[calc(100vh-80px)] overflow-hidden">
-      <div className="w-max h-full flex transition-all ease-in-out duration-1000"
-        style={{transform:`translateX(-${current * 100}vw)`}}>
+      <div
+        className="w-max h-full flex  transition-all ease-in-out duration-1000"
+        style={{ transform: `translateX(-${current * 100}vw)` }}
+      >
         {slides.map((slide) => (
           <div
             className={`${slide.bg} w-screen h-full flex flex-col gap-16 xl:flex-row`}
@@ -77,12 +77,12 @@ const Slider = () => {
                 fill
                 sizes="100%"
                 className="object-cover"
-              ></img>
+              />
             </div>
           </div>
         ))}
       </div>
-      <div className="absolute m-auto left-1/2 bottom-8 gap-4">
+      <div className="absolute flex flex-row m-auto left-1/2 bottom-8 gap-4">
         {slides.map((slide, index) => (
           <div
             className={`w-3 h-3 rounded-full ring-1 ring-gray-600 cursor-pointer flex flex-row items-center justify-center ${
