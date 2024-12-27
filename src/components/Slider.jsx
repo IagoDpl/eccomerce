@@ -74,7 +74,7 @@ const Slider = () => {
               <img
                 src={slide.img}
                 alt=""
-                fill
+                fill="true"
                 sizes="100%"
                 className="object-cover"
               />
