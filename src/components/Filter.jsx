@@ -3,7 +3,7 @@ import React from "react";
 const Filter = () => {
   return (
     <div className="mt-12 flex justify-between">
-      <div className="flex gap-6">
+      <div className="flex gap-6 flex-wrap">
         <select
           name="type"
           id=""
@@ -53,7 +53,15 @@ const Filter = () => {
           <option value="digital">Digital</option>
         </select>
       </div>
-      <div className=""></div>
+      <div className="">
+        <select name="" id="" className="py-2 px-4 rounded-2xl text-xs font-medium bg-gray-200">
+          <option>Filtrar por</option>
+          <option value="">Preço menor para maior</option>
+          <option value="">Preço maior pra menor</option>
+          <option value="">Mais recente</option>
+          <option value="">Mais antigo</option>
+        </select>
+      </div>
     </div>
   );
 };

@@ -18,7 +18,7 @@ const slides = [
     id: 2,
     title: "fall",
     description: " coming",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW5-exerzn9aAF_pPEEmy2C9qtbGq-Z4aAIw&s",
+    img: "https://images.pexels.com/photos/5715330/pexels-photo-5715330.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
     url: "/",
     bg: "bg-gradient-to-r from-yellow-50 to-pink-50",
   },
@@ -71,7 +71,7 @@ const Slider = () => {
             </div>
             {/* IMAGE CONTAINER */}
             <div className="h-1/2 xl:w-1/2 xl:h-full relative">
-              <img
+              <Image
                 src={slide.img}
                 alt=""
                 fill="true"

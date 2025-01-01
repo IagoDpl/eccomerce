@@ -11,17 +11,17 @@ const ProductList = () => {
         className="w-full flex flex-col gap-4 sm:w-[45%] lg:w-[22%]"
       >
         <div className="relative w-full h-80">
-          <img
+          <Image
             src="https://img.pikbest.com/illustration/20240510/spirited-mothers-day-holiday-wishes-222024-png-images-png_10550693.jpg!w700wp"
             alt=""
-            fill="true"
+            fill
             sizes="25vw"
             className="absolute object-cover rounded-md z-10 hover:opacity-0 transition-opacity easy duration-500"
           />
-          <img
+          <Image
             src="https://i.pinimg.com/236x/dd/2d/ab/dd2dab0666b68523c1ec728db355ede4.jpg"
             alt=""
-            fill="true"
+            fill
             sizes="25vw"
             className="absolute object-cover rounded-md"
           />
@@ -40,17 +40,17 @@ const ProductList = () => {
         className="w-full flex flex-col gap-4 sm:w-[45%] lg:w-[22%]"
       >
         <div className="relative w-full h-80">
-          <img
+          <Image
             src="https://img.pikbest.com/illustration/20240510/spirited-mothers-day-holiday-wishes-222024-png-images-png_10550693.jpg!w700wp"
             alt=""
-            fill="true"
+            fill
             sizes="25vw"
             className="absolute object-cover rounded-md z-10 hover:opacity-0 transition-opacity easy duration-500"
           />
-          <img
+          <Image
             src="https://i.pinimg.com/236x/dd/2d/ab/dd2dab0666b68523c1ec728db355ede4.jpg"
             alt=""
-            fill="true"
+            fill
             sizes="25vw"
             className="absolute object-cover rounded-md"
           />
@@ -69,17 +69,17 @@ const ProductList = () => {
         className="w-full flex flex-col gap-4 sm:w-[45%] lg:w-[22%]"
       >
         <div className="relative w-full h-80">
-          <img
+          <Image
             src="https://img.pikbest.com/illustration/20240510/spirited-mothers-day-holiday-wishes-222024-png-images-png_10550693.jpg!w700wp"
             alt=""
-            fill="true"
+            fill
             sizes="25vw"
             className="absolute object-cover rounded-md z-10 hover:opacity-0 transition-opacity easy duration-500"
           />
-          <img
+          <Image
             src="https://i.pinimg.com/236x/dd/2d/ab/dd2dab0666b68523c1ec728db355ede4.jpg"
             alt=""
-            fill="true"
+            fill
             sizes="25vw"
             className="absolute object-cover rounded-md"
           />

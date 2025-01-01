@@ -17,7 +17,7 @@ const ListPage = () => {
           BUY NOW
         </button>
         <div className="relative w-1/3">
-          <img
+          <Image
             src="https://previews.123rf.com/images/imagecatalogue/imagecatalogue1701/imagecatalogue170105992/70331139-testing-text-rubber-seal-stamp-watermark-caption-inside-rectangular-banner-with-grunge-design-and.jpg"
             alt=""
             fill="true"
