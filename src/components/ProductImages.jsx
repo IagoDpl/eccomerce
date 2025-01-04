@@ -32,13 +32,12 @@ function ProductImages() {
           <Image
             src={images[index].url}
             alt=""
-            fill
+            fill="true"
             size="50vw"
             className="object-cover rounded-md"
           />
         </div>
-        <div className="">
-        <div className="flex justify-between gap-4 mt-8 ">
+        <div className="flex justify-between gap-4 mt-8">
           {images.map((img, i) => (
             <div
               className="w-1/4 h-32 relative gap-4 mt-8 cursor-pointer"
@@ -48,14 +47,13 @@ function ProductImages() {
               <Image
                 src={img.url}
                 alt=""
-                fill
+                fill="true"
                 sizes="30vw"
                 className="object-cover rounded-md"
               />
             </div>
           ))}
         </div>
-      </div>
     </div>
   );
 }

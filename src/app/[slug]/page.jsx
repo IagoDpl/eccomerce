@@ -25,21 +25,21 @@ const SinglePage = () => {
       <div className="h-[2px] bg-gray-100" />
       <div className="text-sm">
         <h4 className="font-medium mb-4">TITLE</h4>
-        <p>TESTO DE INFORMAÇÕES
+        <p>TEXTO DE INFORMAÇÕES
 
         </p>
       </div>
       <div className="h-[2px] bg-gray-100" />
       <div className="text-sm">
         <h4 className="font-medium mb-4">TITLE</h4>
-        <p>TESTO DE INFORMAÇÕES
+        <p>TEXTO DE INFORMAÇÕES
 
         </p>
       </div>
       <div className="h-[2px] bg-gray-100" />
       <div className="text-sm">
         <h4 className="font-medium mb-4">TITLE</h4>
-        <p>TESTO DE INFORMAÇÕES
+        <p>TEXTO DE INFORMAÇÕES
 
         </p>
       </div>
