@@ -1,6 +1,8 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
+
 
 const CartModal = () => {
   const cartItems = true;
@@ -16,7 +18,7 @@ const CartModal = () => {
           <div className="flex flex-col gap-8">
             {/*ITEM*/}
             <div className="flex gap-4">
-              <img
+              <Image
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStEs084quZIiUv0YDyCQUQgJ-dxHblojuYtg&s"
                 alt=""
                 width={72}
