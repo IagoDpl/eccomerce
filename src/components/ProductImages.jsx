@@ -1,5 +1,4 @@
 "use client";
-
 import React from "react";
 import { useState } from "react";
 import Image from "next/image";
@@ -7,7 +6,7 @@ import Image from "next/image";
 const images = [
   {
     id: 1,
-    url: "https://images.pexels.com/photos/3403896/pexels-photo-3403896.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    url: "https://images.pexels.com/photos/30148776/pexels-photo-30148776.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   },
   {
     id: 2,
@@ -23,20 +22,20 @@ const images = [
   },
 ];
 
-function ProductImages() {
+const ProductImages = () => {
   const [index, setIndex] = useState(0);
 
   return (
     <div className="">
       <div className="h-[500px] relative">
-          <Image
-            src={images[index].url}
-            alt=""
-            fill="true"
-            size="50vw"
-            className="object-cover rounded-md"
-          />
-        </div>
+        <Image
+          src={images[index].url}
+          alt=""
+          fill="true"
+          size="50vw"
+          className="object-cover rounded-md"
+        />
+      </div>
         <div className="flex justify-between gap-4 mt-8">
           {images.map((img, i) => (
             <div
@@ -54,7 +53,7 @@ function ProductImages() {
             </div>
           ))}
         </div>
-    </div>
+      </div>
   );
 }
 
