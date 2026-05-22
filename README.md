@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🛒 E-commerce Application
 
-## Getting Started
+Uma aplicação frontend de E-commerce moderna, responsiva e dinâmica construída em React. O projeto simula a experiência completa de navegação em uma loja virtual, desde a listagem de produtos com filtros até o gerenciamento dinâmico do carrinho de compras em tempo real.
 
-First, run the development server:
+---
+
+## 💻 Funcionalidades Principais
+
+*   **Catálogo de Produtos:** Exibição dinâmica de itens com tratamento de imagens, preços e descrições.
+*   **Carrinho de Compras Interativo:** Adição, remoção e alteração de quantidade de itens diretamente no fluxo de navegação.
+*   **Cálculo em Tempo Real:** Atualização automática do valor total do pedido, frete ou descontos com base nas ações do usuário.
+*   **Design Responsivo:** Interface otimizada para oferecer uma excelente experiência de usuário (UI/UX) tanto em dispositivos móveis quanto em desktops.
+
+---
+
+## 🛠️ Stack Técnica
+
+O projeto foi estruturado utilizando boas práticas de componentização e arquitetura reativa no ecossistema JavaScript:
+
+*   **[React](https://react.dev/):** Utilizado como biblioteca core para construção da interface baseada em componentes reutilizáveis.
+*   **React Hooks (`useState`, `useEffect`):** Implementados para o gerenciamento de estados locais complexos (como o array de itens do carrinho) e controle do ciclo de vida da aplicação.
+*   **CSS3 Customizado:** Estilização focada em flexibilidade (Flexbox e Grid Layout) para garantir fluidez visual e responsividade sem inflar o tamanho do bundle final.
+
+---
+
+## 🚀 Como Executar Localmente
+
+Para clonar e rodar o projeto na sua máquina, certifique-se de ter o [Git](https://git-scm.com) e o [Node.js](https://nodejs.org/) instalados.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+# 1. Clone o repositório
+$ git clone [https://github.com/IagoDpl/eccomerce.git](https://github.com/IagoDpl/eccomerce.git)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# 2. Entre no diretório do projeto
+$ cd eccomerce
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+# 3. Instale todas as dependências necessárias
+$ npm install
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# 4. Rode a aplicação em ambiente de desenvolvimento
+$ npm start
