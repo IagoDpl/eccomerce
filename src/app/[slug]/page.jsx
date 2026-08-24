@@ -13,7 +13,7 @@ const SinglePage = () => {
       <div className="w-full lg:w-1/2 flex flex-col gap-6">
         {" "}
         TEXTS
-        <h1 className="text-4xl font-medium">PRODUCT NAME</h1>
+        <h1 className="text-4xl font-medium">Nome do Produto</h1>
         <p className="text-gray-500">DESCRIÇÃO DO PRODUTO</p>
         <div className="h-[2px] bg-gray-100" />
         <div className="flex items-center gap-4">
@@ -25,18 +25,18 @@ const SinglePage = () => {
         <Add />
         <div className="h-[2px] bg-gray-100" />
         <div className="text-sm">
-          <h4 className="font-medium mb-4">TITLE</h4>
-          <p>TEXTO DE INFORMAÇÕES</p>
+          <h4 className="font-medium mb-4">Título</h4>
+          <p>TEXTO DE DESCRIÇÃO DO PRODUTO</p>
         </div>
         <div className="h-[2px] bg-gray-100" />
         <div className="text-sm">
-          <h4 className="font-medium mb-4">TITLE</h4>
-          <p>TEXTO DE INFORMAÇÕES</p>
+          <h4 className="font-medium mb-4">Título</h4>
+          <p>TEXTO DE DESCRIÇÃO DO PRODUTO</p>
         </div>
         <div className="h-[2px] bg-gray-100" />
         <div className="text-sm">
-          <h4 className="font-medium mb-4">TITLE</h4>
-          <p>TEXTO DE INFORMAÇÕES</p>
+          <h4 className="font-medium mb-4">Título</h4>
+          <p>TEXTO DE DESCRIÇÃO DO PRODUTO</p>
         </div>
       </div>
     </div>

@@ -12,10 +12,10 @@ const ListPage = () => {
         <div className="w-2/3 pb-10 flex flex-col items-center justify-between gap-8">
         <h1 className="text-4xl font-semibold py-5 leading-[48px] text-gray-700">
           Grab up to 50% off on <br />
-          Selected Products
+          Produtos selecionados
         </h1>
         <button className="rounded-3xl bg-pink-500 text-white w-max py-3 px-5 text-sm">
-          BUY NOW
+          Compre agora
         </button>
         </div>
         <div className="relative w-1/3">

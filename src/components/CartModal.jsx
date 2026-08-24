@@ -30,7 +30,7 @@ const CartModal = () => {
                 <div className=""></div>
                 {/*TITLE*/}
                 <div className="flex items-center justify-between gap-8">
-                  <h3 className="font-semibold">Product Name</h3>
+                  <h3 className="font-semibold">Nome do Produto</h3>
                   <div className="p-1 bg-gray-50 rounded-md">R$50</div>
                 </div>
                 {/*DESC*/}
