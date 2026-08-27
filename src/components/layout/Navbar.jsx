@@ -1,44 +1,33 @@
 import Link from "next/link";
-import Menu from "./Menu";
-import SearchBar from "./SearchBar";
-import NavIcons from "./NavIcons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHandshake } from "@fortawesome/free-solid-svg-icons";
+import SearchBar from "../SearchBar";
+import NavIcons from "../NavIcons";
 
-const Navbar = () => {
+export default function Navbar() {
   return (
-    <div className="full px-4 md:px-8 lg:px-16 xl:32 2xl:px-64 relative">
-      {/*mobile*/}
-      <div className="h-full flex items-center justify-between md-hidden">
-        <Link href="/">
-          <div className="text-2xl tracking-wide">LOJA</div>
-        </Link>
-        <Menu />
-      </div>
-      {/*BIGGER SCREENS*/}
-      <div className="hidden md:flex items-center justify-between gap-8 h-full">
-        {/*LEFT*/}
-        <div className="w-1/3 xl:w-1/2 flex items-center gap-12">
-          <Link href="/" className="flex items-center gap-3">
-            <FontAwesomeIcon icon={faHandshake} width={24} height={24} />
-            <div className="text-2xl tracking-wide"></div>
-          </Link>
-          <div className="hidden xl:flex gap-4">
-            <Link href={"/"}>Homepage</Link>
-            <Link href={"/"}>Shop</Link>
-            <Link href={"/"}>Promoção</Link>
-            <Link href={"/"}>Sobre</Link>
-            <Link href={"/"}>Contato</Link>
+    <header className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-neutral-200 transition-all duration-300">
+      {/* sticky e backdrop-blur criam o efeito de vidro colado no topo */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-20">
+          
+          {/* Logo Minimalista */}
+          <div className="flex-shrink-0">
+            <Link href="/" className="text-2xl font-bold tracking-tighter text-neutral-900">
+              MARCA.
+            </Link>
           </div>
-        </div>
-        {/*RIGHT*/}
-        <div className="w-2/3 xl:1/2 flex items-center justify-between gap-8">
-          <SearchBar />
-          <NavIcons />
+
+          {/* Busca centralizada (oculta em telas muito pequenas) */}
+          <div className="hidden md:flex flex-1 max-w-2xl mx-8">
+            <SearchBar />
+          </div>
+
+          {/* Ícones de Ação */}
+          <div className="flex items-center space-x-6">
+            <NavIcons />
+          </div>
+          
         </div>
       </div>
-    </div>
+    </header>
   );
-};
-
-export default Navbar;
+}

@@ -1,5 +1,5 @@
 import CategoryList from "@/components/CategoryList";
-import ProductList from "@/components/ProductList.component";
+import ProductList from '../components/product/ProductList';
 import Slider from "@/components/Slider";
 
 const HomePage = () => {
