@@ -1,7 +1,7 @@
 "use client";
 
 import Filter from "@/components/Filter";
-import ProductList from "@/components/ProductList.component";
+import ProductList from "@/components/product/ProductList";
 import Image from "next/image";
 
 const ListPage = () => {

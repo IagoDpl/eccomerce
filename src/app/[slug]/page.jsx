@@ -1,44 +1,54 @@
-import Add from "@/components/Add";
+import ProductImages from "../../components/product/ProductImages";
+import CustomizeProducts from "../../components/product/CustomizeProducts";
+import Add from "../../components/Add";
 
-const SinglePage = () => {
+export default function SinglePage() {
   return (
-    <div className="px-4 md:px-8 lg:px-16 xl:32 2xl:px-64 relative flex flex-col lg:flex-row gap-16">
-      {/* IMG */}
-      <div className="w-full lg:w-1/2 lg:sticky top-20 h-max">
-        <ProductImages />
-      </div>
-      {/* TEXTS */}
-      <div className="w-full lg:w-1/2 flex flex-col gap-6">
-        {" "}
-        TEXTS
-        <h1 className="text-4xl font-medium">Nome do Produto</h1>
-        <p className="text-gray-500">DESCRIÇÃO DO PRODUTO</p>
-        <div className="h-[2px] bg-gray-100" />
-        <div className="flex items-center gap-4">
-          <h3 className=" text-xl text-gray-500 line-through">$59</h3>
-          <h2 className="font-medium text-2xl">$49</h2>
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="flex flex-col md:flex-row gap-12 lg:gap-16">
+        
+        {/* Coluna da Esquerda: Galeria de Imagens */}
+        <div className="w-full md:w-1/2 lg:w-[60%]">
+          <ProductImages />
         </div>
-        <div className="h-[2px] bg-gray-100" />
-        <CustomizeProducts />
-        <Add />
-        <div className="h-[2px] bg-gray-100" />
-        <div className="text-sm">
-          <h4 className="font-medium mb-4">Título</h4>
-          <p>TEXTO DE DESCRIÇÃO DO PRODUTO</p>
+
+        {/* Coluna da Direita: Detalhes do Produto (Fixa no Desktop) */}
+        <div className="w-full md:w-1/2 lg:w-[40%] md:sticky top-28 h-max">
+          <h1 className="text-3xl font-medium text-neutral-900 mb-2">
+            Camiseta Essencial Algodão
+          </h1>
+          <p className="text-sm text-neutral-500 mb-6">Ref: 09283/2026</p>
+          
+          <div className="mb-8">
+            <span className="text-2xl font-semibold text-neutral-900">R$ 129,90</span>
+            <span className="text-sm text-neutral-500 ml-3 line-through">R$ 159,90</span>
+          </div>
+          
+          <div className="h-[1px] w-full bg-neutral-200 mb-8" />
+          
+          {/* Seletores de Cor e Tamanho */}
+          <CustomizeProducts />
+          
+          {/* Botão de Adicionar ao Carrinho */}
+          <Add />
+          
+          <div className="h-[1px] w-full bg-neutral-200 mt-8 mb-6" />
+          
+          {/* Descrição do Produto */}
+          <div className="text-sm text-neutral-600 space-y-4">
+            <h4 className="font-medium text-neutral-900">Descrição</h4>
+            <p>
+              Peça chave para um guarda-roupa minimalista. Produzida em algodão premium com caimento estruturado e toque macio.
+            </p>
+            <ul className="list-disc list-inside mt-2 text-neutral-500">
+              <li>100% Algodão Pima</li>
+              <li>Modelagem Regular</li>
+              <li>Produzido no Brasil</li>
+            </ul>
+          </div>
         </div>
-        <div className="h-[2px] bg-gray-100" />
-        <div className="text-sm">
-          <h4 className="font-medium mb-4">Título</h4>
-          <p>TEXTO DE DESCRIÇÃO DO PRODUTO</p>
-        </div>
-        <div className="h-[2px] bg-gray-100" />
-        <div className="text-sm">
-          <h4 className="font-medium mb-4">Título</h4>
-          <p>TEXTO DE DESCRIÇÃO DO PRODUTO</p>
-        </div>
+        
       </div>
     </div>
   );
-};
-
-export default SinglePage;
+}

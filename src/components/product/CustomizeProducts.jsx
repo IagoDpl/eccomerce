@@ -1,32 +1,70 @@
-import React from "react";
+"use client";
 
-const CustomizeProducts = () => {
+import { useState } from "react";
+
+export default function CustomizeProducts() {
+  const [selectedColor, setSelectedColor] = useState("Preto");
+  const [selectedSize, setSelectedSize] = useState("M");
+
+  const colors = [
+    { name: "Preto", hex: "#171717" },
+    { name: "Off-White", hex: "#f5f5f5" },
+    { name: "Marinho", hex: "#1e3a8a" },
+  ];
+
+  const sizes = ["P", "M", "G", "GG"];
+
   return (
-    <div className="flex flex-col gap-6">
-      <h4 className="font-medium">Choose a color</h4>
-      <ul className="flex items-center gap-3">
-        <li className="w-8 h-8 rounded-full ring-1 ring-gray-300 cursor-pointer relative bg-red-500">
-          <div className="absolute w-10 h-10 rounded-full ring-2 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
-        </li>
-        <li className="w-8 h-8 rounded-full ring-1 ring-gray-300 cursor-pointer relative bg-blue-500"></li>
-        <li className="w-8 h-8 rounded-full ring-1 ring-gray-300 cursor-not-allowed   relative bg-green-500">
-          <div className="absolute w-10 h-[2px] bg-red-400 rotate-45 top-1/2 left-1/2 transform -translate-x-1/2 translate-y-1/2"></div>
-        </li>
-      </ul>
-      <h4 className="font-medium">Choose a size</h4>
-      <ul className="flex items-center gap-3">
-        <li className="ring-1 ring-pink-500 text-pink-400 rounded-md py-1 p-x4 text-sm cursor-pointer">
-          Small
-        </li>
-        <li className="ring-1 ring-pink-500 text-white bg-pink-500 rounded-md py-1 p-x4 text-sm cursor-pointer">
-          Medium
-        </li>
-        <li className="ring-1 ring-pink-500 text-white bg-pink-200 rounded-md py-1 p-x4 text-sm cursor-not-allowed">
-          Larga
-        </li>
-      </ul>
+    <div className="flex flex-col gap-6 mb-8">
+      {/* Seletor de Cores */}
+      <div>
+        <h4 className="text-sm font-medium text-neutral-900 mb-3">
+          Cor: <span className="text-neutral-500 font-normal">{selectedColor}</span>
+        </h4>
+        <div className="flex items-center gap-3">
+          {colors.map((color) => (
+            <button
+              key={color.name}
+              onClick={() => setSelectedColor(color.name)}
+              className={`w-8 h-8 rounded-full border-2 transition-all ${
+                selectedColor === color.name
+                  ? "border-neutral-900 p-[2px]"
+                  : "border-transparent"
+              }`}
+            >
+              <div
+                className="w-full h-full rounded-full border border-neutral-200"
+                style={{ backgroundColor: color.hex }}
+              />
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Seletor de Tamanhos */}
+      <div>
+        <div className="flex justify-between items-center mb-3">
+          <h4 className="text-sm font-medium text-neutral-900">Tamanho</h4>
+          <button className="text-xs text-neutral-500 underline underline-offset-4 hover:text-neutral-900">
+            Guia de Medidas
+          </button>
+        </div>
+        <div className="flex items-center gap-3">
+          {sizes.map((size) => (
+            <button
+              key={size}
+              onClick={() => setSelectedSize(size)}
+              className={`w-12 h-12 flex items-center justify-center text-sm transition-colors border ${
+                selectedSize === size
+                  ? "border-neutral-900 bg-neutral-900 text-white"
+                  : "border-neutral-300 text-neutral-600 hover:border-neutral-900"
+              }`}
+            >
+              {size}
+            </button>
+          ))}
+        </div>
+      </div>
     </div>
   );
-};
-
-export default CustomizeProducts;
+}

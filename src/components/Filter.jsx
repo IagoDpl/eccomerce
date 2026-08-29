@@ -1,69 +1,58 @@
-import React from "react";
+"use client";
 
-const Filter = () => {
+export default function Filter() {
   return (
-    <div className="mt-12 flex justify-between">
-      <div className="flex gap-6 flex-wrap">
+    <div className="flex flex-col md:flex-row justify-between items-center py-4 mb-8 border-y border-neutral-200 bg-white gap-4">
+      
+      {/* Filtros à esquerda */}
+      <div className="flex flex-wrap items-center gap-2 md:gap-4 w-full md:w-auto">
         <select
           name="type"
-          id=""
-          className="py-2 px-4 rounded-2xl text-xs font-medium bg-gray-200"
+          className="py-2 px-4 rounded-full text-sm font-medium bg-neutral-50 border border-neutral-200 text-neutral-700 outline-none focus:border-neutral-900 cursor-pointer appearance-none"
         >
-          <option value="">Type</option>
-          <option value="physical">Physical</option>
+          <option value="">Tipo</option>
+          <option value="physical">Físico</option>
           <option value="digital">Digital</option>
         </select>
+        
         <input
           type="text"
           name="min"
-          placeholder="preço mínimo"
-          className="text-xs rounded-2xl pl-2 w-24 ring-1 ring-gray-400"
+          placeholder="Preço Min"
+          className="text-sm rounded-full pl-4 py-2 w-24 border border-neutral-200 bg-neutral-50 outline-none focus:border-neutral-900"
         />
         <input
           type="text"
-          name="min"
-          placeholder="preço máximo"
-          className="text-xs rounded-2xl pl-2 w-24 ring-1 ring-gray-400"
+          name="max"
+          placeholder="Preço Max"
+          className="text-sm rounded-full pl-4 py-2 w-24 border border-neutral-200 bg-neutral-50 outline-none focus:border-neutral-900"
         />
+        
         <select
-          name="type"
-          id=""
-          className="py-2 px-4 rounded-2xl text-xs font-medium bg-gray-200"
+          name="size"
+          className="py-2 px-4 rounded-full text-sm font-medium bg-neutral-50 border border-neutral-200 text-neutral-700 outline-none focus:border-neutral-900 cursor-pointer appearance-none"
         >
-          <option value="">Type</option>
-          <option value="physical">Physical</option>
-          <option value="digital">Digital</option>
-        </select>
-        <select
-          name="type"
-          id=""
-          className="py-2 px-4 rounded-2xl text-xs font-medium bg-gray-200"
-        >
-          <option value="">Type</option>
-          <option value="physical">Physical</option>
-          <option value="digital">Digital</option>
-        </select>
-        <select
-          name="type"
-          id=""
-          className="py-2 px-4 rounded-2xl text-xs font-medium bg-gray-200"
-        >
-          <option value="">Type</option>
-          <option value="physical">Physical</option>
-          <option value="digital">Digital</option>
+          <option value="">Tamanho</option>
+          <option value="p">P</option>
+          <option value="m">M</option>
+          <option value="g">G</option>
         </select>
       </div>
-      <div className="">
-        <select name="" id="" className="py-2 px-4 rounded-2xl text-xs font-medium bg-gray-200">
-          <option>Filtrar por</option>
-          <option value="">Preço menor para maior</option>
-          <option value="">Preço maior pra menor</option>
-          <option value="">Mais recente</option>
-          <option value="">Mais antigo</option>
+
+      {/* Ordenação à direita */}
+      <div className="w-full md:w-auto flex justify-end">
+        <select
+          name="sort"
+          className="py-2 px-6 rounded-full text-sm font-medium bg-white border border-neutral-300 text-neutral-900 outline-none focus:border-neutral-900 cursor-pointer appearance-none shadow-sm"
+        >
+          <option value="">Ordenar por</option>
+          <option value="asc price">Preço (Menor ao Maior)</option>
+          <option value="desc price">Preço (Maior ao Menor)</option>
+          <option value="asc lastUpdated">Mais Recentes</option>
+          <option value="desc lastUpdated">Mais Antigos</option>
         </select>
       </div>
+      
     </div>
   );
-};
-
-export default Filter;
+}
