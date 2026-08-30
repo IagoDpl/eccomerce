@@ -40,4 +40,4 @@ $ npm install
 # 4. Rode a aplicação em ambiente de desenvolvimento
 $ npm start
 
-repositório em manutenção
+repositório em manutenção para atualiar a stack do site
