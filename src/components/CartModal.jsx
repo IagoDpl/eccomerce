@@ -1,60 +1,60 @@
-export default function CartModal({ isOpen, setIsOpen }) {
+"use client";
+
+import Link from "next/link";
+
+export default function CartModal() {
+  // Itens estáticos apenas para visualização até conectarmos a API REST
+  const cartItems = [
+    { id: 1, name: "Camiseta Preta Essencial", price: 129.90, qty: 2, img: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=100&auto=format&fit=crop" },
+    { id: 2, name: "Calça Jeans Reta", price: 259.99, qty: 1, img: "https://images.unsplash.com/photo-1542272604-787c3835535d?q=80&w=100&auto=format&fit=crop" },
+  ];
+
   return (
-    <>
-      {/* Overlay escuro que desfoca o fundo - Clicar nele fecha o modal */}
-      {isOpen && (
-        <div 
-          className="fixed inset-0 bg-black/20 backdrop-blur-sm z-50 transition-opacity duration-300"
-          onClick={() => setIsOpen(false)}
-        />
-      )}
-
-      {/* A Gaveta (Slide-over) em si */}
-      <div 
-        className={`fixed inset-y-0 right-0 z-50 w-full max-w-md bg-white shadow-2xl transform transition-transform duration-500 ease-in-out ${
-          isOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-      >
-        <div className="flex flex-col h-full">
-          
-          {/* Header do Carrinho */}
-          <div className="flex items-center justify-between p-6 border-b border-neutral-100">
-            <h2 className="text-lg font-medium text-neutral-900">Seu Carrinho</h2>
-            <button 
-              onClick={() => setIsOpen(false)}
-              className="p-2 text-neutral-400 hover:text-neutral-900 transition-colors"
-            >
-              <span className="sr-only">Fechar</span>
-              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
-
-          {/* Área Central (Itens) */}
-          <div className="flex-1 overflow-y-auto p-6">
-            <div className="flex flex-col justify-center items-center h-full text-neutral-400 space-y-4">
-              <svg className="h-12 w-12 stroke-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-              </svg>
-              <p className="text-sm">Seu carrinho está vazio.</p>
+    <div className="absolute top-12 right-0 p-6 rounded-sm shadow-[0_10px_40px_rgb(0,0,0,0.1)] bg-white w-80 lg:w-96 flex flex-col gap-6 z-50 border border-neutral-100">
+      <h2 className="text-lg font-medium text-neutral-900">Meu Carrinho</h2>
+      
+      <div className="flex flex-col gap-5">
+        {cartItems.map(item => (
+          <div className="flex gap-4" key={item.id}>
+            <img src={item.img} alt={item.name} className="w-16 h-20 object-cover rounded-sm bg-neutral-100" />
+            <div className="flex flex-col justify-between w-full">
+              <div className="flex items-start justify-between gap-4">
+                <h3 className="font-medium text-neutral-900 text-sm">{item.name}</h3>
+                <span className="text-sm font-semibold text-neutral-900">
+                  R$ {item.price.toFixed(2).replace('.', ',')}
+                </span>
+              </div>
+              <div className="flex justify-between text-sm text-neutral-500">
+                <span className="text-xs">Qtd: {item.qty}</span>
+                <button className="text-neutral-400 text-xs hover:text-red-500 transition-colors underline underline-offset-2">Remover</button>
+              </div>
             </div>
           </div>
+        ))}
+      </div>
 
-          {/* Rodapé e Checkout */}
-          <div className="border-t border-neutral-100 p-6 bg-neutral-50">
-            <div className="flex justify-between text-base font-medium text-neutral-900 mb-6">
-              <p>Subtotal</p>
-              <p>R$ 0,00</p>
-            </div>
-            <p className="text-xs text-neutral-500 mb-4">Frete e taxas calculados no checkout.</p>
-            <button className="w-full bg-neutral-900 text-white px-6 py-4 rounded-sm text-sm font-medium tracking-wide uppercase hover:bg-neutral-800 transition-colors">
-              Finalizar Compra
-            </button>
-          </div>
-          
+      <div className="flex flex-col mt-2">
+        <div className="flex items-center justify-between font-medium text-neutral-900 mb-2">
+          <span>Subtotal</span>
+          <span className="text-lg font-semibold">R$ 519,79</span>
+        </div>
+        <p className="text-xs text-neutral-500 mb-6">
+          Frete e taxas calculados na próxima etapa.
+        </p>
+        
+        <div className="flex gap-3 text-sm font-medium">
+          {/* O botão que leva para a página completa /cart */}
+          <Link 
+            href="/cart" 
+            className="rounded-sm py-3 px-4 border border-neutral-300 text-neutral-700 hover:border-neutral-900 hover:text-neutral-900 transition-all w-1/2 text-center"
+          >
+            Ver Carrinho
+          </Link>
+          <button className="rounded-sm py-3 px-4 bg-neutral-900 text-white hover:bg-neutral-800 transition-all shadow-sm w-1/2 text-center">
+            Finalizar
+          </button>
         </div>
       </div>
-    </>
+    </div>
   );
 }

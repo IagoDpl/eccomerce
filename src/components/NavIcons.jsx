@@ -1,68 +1,36 @@
 "use client";
 
-import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
-import { faBell } from "@fortawesome/free-solid-svg-icons";
-import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useState } from "react";
 import CartModal from "./CartModal";
 
-const NavIcons = () => {
-  const [isProfileOpen, setIsProfileOpen] = useState(false);
+export default function NavIcons() {
   const [isCartOpen, setIsCartOpen] = useState(false);
-
-  const router = useRouter();
-
-  //TEMPORARY
-  const isLoggedIn = false;
-
-  const handleProfile = () => {
-    if (!isLoggedIn) {
-      router.push("/login");
-    }
-    setIsProfileOpen((prev) => !prev);
-  };
 
   return (
     <div className="flex items-center gap-4 xl:gap-6 relative">
-      <FontAwesomeIcon
-        icon={faUser}
-        width={22}
-        height={22}
-        className="cursor-pointer"
-        onClick={handleProfile}
-      />
-      {isProfileOpen && (
-        <div className="absolute p-4 rounded-md top-12 left-0 text-sm shadow-[0_3px_10px_rgb(0,0,0,0.2)] z-20">
-          <Link href={"/"}>Profile</Link>
-          <div className="mt-2 cursor-pointer">Logout</div>
-        </div>
-      )}
-      <FontAwesomeIcon
-        icon={faBell}
-        width={22}
-        height={22}
-        className="cursor-pointer"
-      />
-      <div
-        className="relative cursor-pointer"
+      {/* Ícone de Perfil */}
+      <button className="cursor-pointer text-neutral-700 hover:text-neutral-900 transition-colors">
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+        </svg>
+      </button>
+
+      {/* Ícone do Carrinho */}
+      <div 
+        className="relative cursor-pointer text-neutral-700 hover:text-neutral-900 transition-colors" 
         onClick={() => setIsCartOpen((prev) => !prev)}
       >
-        <FontAwesomeIcon
-          icon={faCartShopping}
-          width={22}
-          height={22}
-          className="cursor-pointer"
-        />
-        <div className="absolute -top-4 -right-4 w-6 h-6 bg-[#F35c7a] rounded-full text-white text-sm flex items-center justify-center">
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+        </svg>
+        {/* Badge de Quantidade */}
+        <div className="absolute -top-2 -right-2 w-5 h-5 bg-neutral-900 rounded-full text-white text-[10px] font-medium flex items-center justify-center shadow-sm">
           2
         </div>
       </div>
+
+      {/* Dropdown do Mini-Carrinho */}
       {isCartOpen && <CartModal />}
     </div>
   );
-};
-
-export default NavIcons;
+}
