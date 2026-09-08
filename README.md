@@ -41,3 +41,4 @@ $ npm install
 $ npm start
 
 repositório em manutenção para atualiar a stack do site
+organizando arquitetura
