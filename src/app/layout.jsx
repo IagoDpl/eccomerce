@@ -4,7 +4,7 @@ import "./globals.css";
 
 export const metadata = {
   title: "Moda | E-commerce",
-  description: "Minimalist fashion store",
+  description: "Minimalist fashion store project built with Next.js, Tailwind CSS, and TypeScript.",
 };
 
 export default function RootLayout({ children }) {
